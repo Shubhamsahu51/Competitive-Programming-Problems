@@ -23,7 +23,7 @@ Expected Auxiliary Space: O(1)
 Constraints:
 1 <= Length of S <= 105
 
-**Solution** -
+**Solution** 
 
 class Solution{
 public:	
