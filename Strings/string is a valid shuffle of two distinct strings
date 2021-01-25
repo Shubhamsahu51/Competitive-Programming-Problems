@@ -1,0 +1,15 @@
+Check if a string is a valid shuffle of two distinct strings.
+For result to be to be a valid shuffle, the order of string should be maintained.
+s1="XY";
+s2="12";
+output="1XY2" >> VALID SHUFFLE
+output="x1Y2" >> VALID SHUFFLE
+output="12XY" >> VALID SHUFFLE
+output="1X2Y" >> VALID SHUFFLE
+output="YI2X" >> NOT VALID SHUFFLE
+Y12X is not a valid shuffle.This is because Y12X has altered the order of string XY. Here, Y is used before X. Hence, to be a valid shuffle, the order of string should be maintained.
+
+
+
+************************************************Solution**********************************************************************
+
