@@ -13,3 +13,42 @@ Y12X is not a valid shuffle.This is because Y12X has altered the order of string
 
 ************************************************Solution**********************************************************************
 
+#include <bits/stdc++.h>
+using namespace std;
+
+void suffle (string str1,string str2,string str3) {
+    int n=str3.size();
+    int i=0,j=0,k=0;
+    for(;k<n;) {
+        
+        if(str3[k]==str1[i]) {
+            i++;
+            k++;
+        }
+        
+        else if(str3[k]==str2[j]) {
+            k++;
+            j++;
+        }
+        else {
+            cout << "not valid suffle";
+            return;
+        }
+       
+    }
+    
+ cout << "valid suffle";
+ 
+}
+
+
+int main()
+{
+    string s1,s2,s3;
+    cout <<"enetr strings\n";
+    cin >> s1 >> s2;
+    cout <<"\n enter string which you want to verify";
+    cin >> s3;
+    suffle(s1,s2,s3);
+    return 0;
+}
