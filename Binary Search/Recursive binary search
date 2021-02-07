@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int RBinarysearh(int a[],int l,int h,int key) {
+    int mid = (l+h)/2;
+    if (l<=h) {
+        if (a[mid]==key)
+        return  mid;
+        else if(a[mid]<key) 
+        return RBinarysearh(a,mid+1,h,key);
+        else 
+        return  RBinarysearh(a,l,mid-1,key);
+    }
+    return -1;
+}
+int main () {
+    int arr[] = {1,2,6,8,9};
+    int m=RBinarysearh(arr,0,5,11);
+    if (m==-1)
+    cout <<"not present";
+    else 
+    cout <<"present";
+    
+    return 0;
+    
+}
