@@ -44,3 +44,16 @@ public:
         return profit;
     }
 };
+
+***********************************OPTIMISE MORE****************************
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int ans = INT_MIN, maxElement = prices[prices.size()-1];
+        for(int i=prices.size()-2; i>=0; i--){
+            ans = ans > maxElement-prices[i] ? ans : maxElement-prices[i];
+            maxElement = maxElement > prices[i] ? maxElement : prices[i];
+        }
+        return max(ans,0);
+    }
+};
