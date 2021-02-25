@@ -1,0 +1,31 @@
+Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+
+Examples:
+
+s = "leetcode"
+return 0.
+
+s = "loveleetcode"
+return 2.
+ 
+
+Note: You may assume the string contains only lowercase English letters.
+
+
+
+*********************************************Solution*********************************************************
+
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        int IF[26]={0};
+        for (int i=0;i<s.length();i++) {
+            IF[s[i]-97]+=1;
+        }
+        for (int i=0;i<s.length();i++) {
+            if (IF[s[i]-97]==1)
+                   return i;
+        }
+        return -1;
+    }
+};
