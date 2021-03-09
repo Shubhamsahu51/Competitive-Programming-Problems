@@ -38,19 +38,16 @@ Constraints:
 1 ≤ N ≤ 106
 -107 ≤ A[i] <= 107
 
-Soluton-
-// Function to find subarray with maximum sum
-// arr: input array
-// n: size of array
-int maxSubarraySum(int arr[], int n){
-    int msf=INT_MIN;
-    int meh=0;
-    for (int i=0;i<n;i++) {
-        meh=meh+arr[i];
-        if (meh<arr[i])
-        meh=arr[i];
-        if (msf<meh)
-        msf=meh;
+*************************************************************************************************Soluton***********************************************************************
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int res=nums[0];
+        int maxending=nums[0];
+        for (int i=1;i<nums.size();i++) {
+            maxending=max(maxending+nums[i],nums[i]);
+            res=max(maxending,res);
+        }
+        return res;
     }
-    return msf;
-}
+};
