@@ -12,14 +12,14 @@ Output:
 class Solution {
 public:
     int trap(vector<int>& height) {
-        if(height.size()==0)
+        if(height.size()==0)                         //corner case
         {
             return 0;
         }
         int res=0;
         int n=height.size();
-        int* lmax=new int[n];
-        int* rmax=new int[n];
+        int lmax[n];
+        int rmax[n];
         lmax[0]=height[0];
         for (int i=1;i<n;i++) 
             lmax[i]=max(height[i],lmax[i-1]);
