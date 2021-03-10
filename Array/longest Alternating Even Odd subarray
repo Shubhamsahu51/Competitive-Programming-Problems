@@ -1,0 +1,23 @@
+Given an array a[] of N integers, the task is to find the length of the longest Alternating Even Odd subarray present in the array.
+
+Examples:
+
+Input: a[] = {1, 2, 3, 4, 5, 7, 9}
+Output: 5
+Explanation:
+The subarray {1, 2, 3, 4, 5} has alternating even and odd elements.
+
+********************************************************************************Solution********************************************************************
+
+int maxevenodd(int arr[],int n) {
+    int curr=1,res=1;
+    for (int i=1;i<n;i++) {
+        if ((arr[i]%2==0 and arr[i-1]%2!=0) or (arr[i]%2!=0 and arr[i-1]%2==0)) {
+        curr++;
+        res=max(res,curr);
+        }
+        else
+        curr=1;
+    }
+    return curr;
+}
