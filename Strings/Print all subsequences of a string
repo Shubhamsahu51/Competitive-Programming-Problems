@@ -18,7 +18,7 @@ void subseq(string ip,string op) {
 int main() {
     string ip;
     cin>>ip;
-    string op=" ";
+    string op=" ";                           //initialise output
     subseq(ip,op);
 	return 0;
 }
