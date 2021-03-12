@@ -1,0 +1,64 @@
+Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string's permutations is the substring of the second string.
+
+ 
+
+Example 1:
+
+Input: s1 = "ab" s2 = "eidbaooo"
+Output: True
+Explanation: s2 contains one permutation of s1 ("ba").
+Example 2:
+
+Input:s1= "ab" s2 = "eidboaoo"
+Output: False
+ 
+
+Constraints:
+
+The input strings only contain lower case letters.
+The length of both given strings is in range [1, 10,000]
+
+*************************************************************************Solution******************************************************************************
+class Solution {
+public:
+    
+     bool aresame (int arr[],int brr[]) {           
+        for (int i=0;i<256;i++) {
+            if (arr[i]!=brr[i])
+                return false;
+        }
+        return true;
+    }
+    
+    bool checkInclusion(string s1, string s2) {
+        int counttxt[256]={0};
+        int countpat[256]={0};
+        int n=s2.length();
+        int m=s1.length();
+        vector<int>ans;
+        if (n < m)
+            return false;
+      
+        for (int i=0;i<m;i++) {
+            counttxt[s2[i]]++;
+            countpat[s1[i]]++;
+        }
+   
+            
+
+       for (int i=m;i<n;i++) {
+            if (aresame(counttxt,countpat)) {                // Compare counts of current windowof text with counts of pattern[] 
+                return true;
+            
+            }
+            counttxt[s2[i]]++;
+            counttxt[s2[i-m]]--;
+        }
+        if (aresame(counttxt,countpat)) {              //check for last window                                
+                return true;
+            
+            }
+        
+        return false;
+    }
+};
