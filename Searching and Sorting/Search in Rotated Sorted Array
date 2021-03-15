@@ -24,7 +24,7 @@ nums is guaranteed to be rotated at some pivot.
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+   int search(vector<int>& nums, int target) {
         int l=0;
         int h=nums.size()-1;
         
@@ -32,8 +32,8 @@ public:
             int mid=(l+h)/2;
             if (nums[mid]==target)         //found ele
                 return mid;
-            if (nums[l]<nums[mid]) {             //left side sorted 
-                if (target>nums[l] and target<=nums[mid])
+            if (nums[l]<=nums[mid]) {             //left side sorted 
+                if (target>=nums[l] and target<nums[mid])
                     h=mid-1;
                 else
                     l=mid+1;
@@ -47,6 +47,6 @@ public:
             }
         }
       return -1;
-        }
+    }
         
 };
