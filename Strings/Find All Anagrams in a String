@@ -1,3 +1,4 @@
+
 Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
 
 Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
@@ -18,6 +19,7 @@ The substring with start index = 6 is "bac", which is an anagram of "abc".
 
 
 *****************************************************************************Solution***********************************************************************************
+https://leetcode.com/submissions/detail/466764871/
 
 class Solution {
 public:
@@ -60,4 +62,4 @@ public:
         return ans;
     }
 };
-https://leetcode.com/submissions/detail/466764871/
+
