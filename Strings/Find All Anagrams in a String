@@ -19,7 +19,7 @@ The substring with start index = 6 is "bac", which is an anagram of "abc".
 
 
 *****************************************************************************Solution***********************************************************************************
-https://leetcode.com/submissions/detail/466764871/
+[https://leetcode.com/submissions/detail/466764871/]
 
 class Solution {
 public:
