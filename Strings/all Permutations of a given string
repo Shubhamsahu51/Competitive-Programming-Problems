@@ -46,7 +46,7 @@ class Solution
 		    vector <string>v;
 		    int n=S.size();
 		    sort(S.begin(),S.end());
-		    if (n < 0)
+		    if (n == 0)
              return {};
 		    int t=1;
 		    while (t) {
