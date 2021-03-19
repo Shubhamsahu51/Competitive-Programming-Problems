@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void subseq(string ip,string op,v) {
+    if (ip.length()==0) {
+        v.push_back(op);
+        return;
+    }
+    string op1=op;
+    string op2=op;
+    op2.push_back(ip[0]);
+    ip.erase(ip.begin()+0);
+    subseq(ip,op1,v);
+    subseq(ip,op2,v);
+    return;
+}
+
+int main() {
+    string ip;
+    cin>>ip;
+    vector<string>v;                         //vector of string for storing subsequences.
+    string op=" ";                           //initialise output
+    subseq(ip,op,v);
+    for (int i=0;i<v.size();i++)
+     cout<<v[i]<<endl;
+	return 0;
+}
