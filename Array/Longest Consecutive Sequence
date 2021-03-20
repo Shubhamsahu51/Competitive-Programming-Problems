@@ -44,20 +44,20 @@ public:
     }
 };
 
-ii)
+ii) optimise-O(N)
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         int res=0;
-        int curr;
+        int curr=0;
         unordered_set<int>h;
         for (int i=0;i<nums.size();i++) {
             h.insert(nums[i]);
         }
         for (int i=0;i<nums.size();i++) {
-            if (h.find(nums[i]-1)!=h.end()) {
+            if (h.find(nums[i]-1)==h.end()) {
                 curr=1;
-                while (h.find(nums[i]+1)!=h.end())
+                while (h.find(nums[i]+curr)!=h.end())
                     curr++;
                 res=max(res,curr);
         
