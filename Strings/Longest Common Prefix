@@ -28,7 +28,7 @@ public:
             return "";
         }
         
-        string LCP = strs[0];
+        string LCP = strs[0];                                                                                          // treat 1st string as ref string
         
         for (int i = 1; i < strs.size(); i++) {
             int j = 0;
@@ -38,11 +38,11 @@ public:
                 j++;
             }
             
-            if (j == 0) {
+            if (j == 0) {                                                                                            //no prefix char  match
                 return "";
             }
             
-            LCP = LCP.substr(0, j);
+            LCP = LCP.substr(0, j);                                                                                //store common prefix in LCP,now LCP got updated
         }
         
         return LCP;
