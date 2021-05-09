@@ -18,7 +18,7 @@ list will be (3 9 0).
 class Solution
 {
     public:
-    Node* reverse (Node* head) {
+    Node* reverse (Node* head) {                                       //for reversing LL
         Node* curr=head;
         Node* prev=NULL;
         Node* Next=NULL;
