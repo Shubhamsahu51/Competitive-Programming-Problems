@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool mycmp (pair<int,char>p1,pair<int,char>p2) {
+    return p1.second>p2.second;
+}
+int main () {
+    int a[]={1,2,3};
+    int b[]={'x','y','z'};
+    pair<int,char>pa[3];
+    for (int i=0;i<3;i++) {
+        pa[i]={a[i],b[i]};
+    }
+    sort(pa,pa+3,mycmp);
+    for(int i=0;i<3;i++) {
+        cout<<pa[i].first<<" "<<pa[i].second<<endl;;
+    }
+    return 0;
+}
