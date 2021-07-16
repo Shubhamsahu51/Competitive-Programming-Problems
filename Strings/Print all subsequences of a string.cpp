@@ -22,25 +22,23 @@ int main() {
     subseq(ip,op);
 	return 0;
 }
-using character array:-
-#include<bits/stdc++.h>
-using namespace std;
-void allsubsequence(char*input,char*output,int i,int j) {
-    //base case
-    if (input[i]=='\0') {
-        output[j]='\0';
-        cout<<output<<" ";
+using g4g approach(reducing code work):-
+void printSubsequence(string input, string output)
+{
+    // Base Case
+    // if the input is empty print the output string
+    if (input.empty()) {
+        cout << output << endl;
         return;
     }
-    //include that character
-    output[j]=input[i];
-    allsubsequence(input,output,i+1,j+1);
-    //exclude that character
-    allsubsequence(input,output,i+1,j);
-} 
-int main () {
-    char in[]="abc";
-    char out[10];
-    allsubsequence(in,out,0,0);
-    return 0;
+ 
+    // output is passed with including
+    // the Ist characther of
+    // Input string
+    printSubsequence(input.substr(1), output + input[0]);
+ 
+    // output is passed without
+    // including the Ist character
+    // of Input string
+    printSubsequence(input.substr(1), output);
 }
