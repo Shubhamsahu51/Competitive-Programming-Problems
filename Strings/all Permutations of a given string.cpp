@@ -51,7 +51,7 @@ class Solution
 		    int t=1;
 		    while (t) {
 		        v.push_back(S);
-		        t=next_permutation(S.begin(),S.end());
+		        t=next_permutation(S.begin(),S.end());              //next permuation return 1 or 0 and it will store next permutation of string if it exits in same string only
 		        
 		    }
             return v;
