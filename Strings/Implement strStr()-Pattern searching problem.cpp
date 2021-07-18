@@ -1,3 +1,4 @@
+i)-BF
 class Solution {
 public:
     int strStr(string txt, string pat) {
