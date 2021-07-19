@@ -24,7 +24,7 @@ public:
 
 
 ii)KMP ALGO-
-     vector<int> kmpProcess(string pat) {                       
+     vector<int> kmpProcess(string pat) {              //build lps[]         
         int n = pat.size();
         vector<int> lps(n, 0);
         for (int i = 1, len = 0; i < n;) {
@@ -41,7 +41,7 @@ ii)KMP ALGO-
         return lps;
     }
     
-    void strStr(string txt, string pat) {
+    void strStr(string txt, string pat) {                //using lps[] find pattern in tt string
         int m = txt.size(), n = pat.size();
         if (!n) {
             return 0;
