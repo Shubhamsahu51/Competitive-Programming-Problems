@@ -41,7 +41,7 @@ ii)KMP ALGO-
         return lps;
     }
     
-    void strStr(string txt, string pat) {                //using lps[] find pattern in tt string
+    void strStr(string txt, string pat) {                //using lps[] find pattern in txt string
         int m = txt.size(), n = pat.size();
         if (!n) {
             return 0;
