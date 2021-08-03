@@ -27,7 +27,7 @@ ii)KMP ALGO-
      vector<int> kmpProcess(string pat) {              //build lps[]         
         int n = pat.size();
         vector<int> lps(n, 0);
-        for (int i = 1, len = 0; i < n;) {
+        for (int i = 1, len = 0; i < n;) {             //len keep track of lps
             if (pat[i] == pat[len]) {
                 lps[i++] = ++len;
             } 
