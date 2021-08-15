@@ -68,8 +68,28 @@ class Solution{
 };
 
 
+ii)-Using Stack-T(n)=o(N),s(n)=O(N)
+class Solution{
+    //Function to find the leaders in the array.
+    public:
+    vector<int> leaders(int arr[], int n){
+        stack<int>st;
+        vector<int>ans;
+        st.push(arr[n-1]);
+        for (int i=n-2;i>=0;i--) {
+            if (st.top()<=arr[i])             //will work for adjacent equal elements also
+                st.push(arr[i]);
+        }
+        while (!st.empty()) {
+            ans.push_back(st.top());
+            st.pop();
+        }
+        return ans;
+        
+    }
+};
 
-ii) OPTIMISE-O(N)
+iii) OPTIMISE-O(N)
 vector<int> leaders(int a[], int n){
         int curr_leader=a[n-1];
         vector<int>v;
