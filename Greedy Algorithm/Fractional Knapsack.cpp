@@ -17,13 +17,13 @@ capacity of sack.
 
 
 //class implemented
-/*
+
+ 
+ 
 struct Item{
     int value;
     int weight;
 };
-*/
-
 
 class Solution
 {
