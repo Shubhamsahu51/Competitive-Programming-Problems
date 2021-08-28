@@ -24,35 +24,27 @@ struct Item{
     int value;
     int weight;
 };
-
 class Solution
 {
     public:
-     bool mycmp(pair<int,int>a,pair<int,int>b) {
-        double tmp1=(double)a.first / (a.second*1.0);
-        double tmp2=(double)b.first/ (b.second*1.0);
+     static bool mycmp(Item a, Item b) {
+        double tmp1=(double)a.value / (a.weight);
+        double tmp2=(double)b.value/ (b.weight);
         return tmp1>tmp2;
     }
     //Function to get the maximum total value in the knapsack.
     double fractionalKnapsack(int W, Item arr[], int n)
     {
-        vector<pair<int,int>>ans;
-        for (int i=0;i<n;i++) {           //make vector of pair
-            Item temp=arr[i];
-            int val=temp.value;
-            int wt=temp.weight;
-            ans.push_back({val,wt});
-        }
-        sort (ans.begin(),ans.end(),mycmp);
+        
+        sort (arr,arr+n,mycmp);
         double res=0.0;
         for (int i=0;i<n;i++) {
-            if (ans[i].second <= W) {
-                res+=ans[i].first;
-                W=W-ans[i].second;
-                
+            if (arr[i].weight <= W) {
+                res+=arr[i].value;
+                W=W-arr[i].weight;
             }
             else {
-               res+=ans[i].first*((double)W/ans[i].second);
+               res+=arr[i].value*((double)W/arr[i].weight);
                break;
             }
         }
