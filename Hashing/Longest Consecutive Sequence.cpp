@@ -23,3 +23,27 @@ public:
         return res;
     }
 };
+ii) optimise-
+  
+  
+  class Solution {
+public:
+    int longestConsecutive(vector<int>& arr) {
+        unordered_set<int>s;
+        for (int i=0;i<arr.size();i++) {
+            s.insert(arr[i]);
+        }
+        int res=0,curr=0;
+        for (int i=0;i<arr.size();i++) {
+            if (s.find(arr[i]-1)==s.end()) {
+                curr=1;
+                while (s.find(arr[i]+curr)!=s.end()) {
+                    curr++;
+                }
+                res=max(res,curr);
+            }
+        }
+        return res;
+    }
+    
+};
