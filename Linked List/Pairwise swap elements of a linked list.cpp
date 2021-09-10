@@ -38,3 +38,30 @@ class Solution
        
     }
 };
+
+ii)Changing refrences
+
+class Solution
+{
+    public:
+    Node* pairWiseSwap(struct Node* head) 
+    {
+        if (head==NULL or head->next==NULL) {   //corner case
+            return head;
+        }
+        Node *curr=head->next->next;              //for 1st 2 node
+        Node *prev=head;
+        head=head->next;   //new head of swapped LL
+        head->next=prev;
+        // cout<<head->data<<" "<<prev->data;
+        while (curr!=NULL and curr->next!=NULL) {    //for rest of node in pair wise
+            prev->next=curr->next;
+            Node *Next=curr->next->next;
+            prev=curr;
+            curr->next->next=curr;
+            curr=Next;
+        }
+        prev->next=curr;
+        return head;
+    }
+};
