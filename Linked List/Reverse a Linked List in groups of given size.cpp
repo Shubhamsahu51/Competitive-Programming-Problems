@@ -36,3 +36,35 @@ class Solution
        return prev;
     }
 };
+
+ii) iteriative:-
+    class Solution
+{
+    public:
+    struct node *reverse (struct node *head, int k)
+    { 
+        node* curr=head;
+        node* prevfirst=NULL;
+        bool isfirstpass=true;
+        while (curr != NULL) {
+            node* first=curr,*prev=NULL;
+            int count =0;
+            while (curr != NULL and count < k) {
+                node* Next=curr->next;
+                curr->next=prev;
+                prev=curr;
+                curr=Next;
+                count++;
+            }
+            if (isfirstpass) {
+                head=prev;
+                isfirstpass=false;
+            }
+            else {
+                prevfirst->next=prev;
+            }
+            prevfirst=first;
+        }
+        return head;
+    }
+};
