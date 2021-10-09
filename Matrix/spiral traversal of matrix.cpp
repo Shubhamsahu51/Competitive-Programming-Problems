@@ -29,17 +29,11 @@ public:
                 ans.push_back(matrix[bottom][i]);
             
             bottom--;
-            
-            if (bottom <top)
-                break;
-            
+
             for (int i=bottom;i>=top;i--)
                 ans.push_back(matrix[i][left]);
             
             left++;
-            if (left >right)
-                break;
-            
         }
         return ans;
     }
