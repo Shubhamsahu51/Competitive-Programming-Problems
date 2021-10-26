@@ -53,7 +53,7 @@ i)BF-
 ii)optimise-
 class Solution {
 public:
-    int normalmaxsum(vector<int>& A,int n) {                             //cal to noraml subarray sum
+    int normalmaxsum(vector<int>& A,int n) {                             //calculate maximum sum in array
         int res=A[0];
         int maxending=A[0];
         for (int i=1;i<n;i++) {
@@ -71,7 +71,7 @@ public:
         int totalsum=0;
         for (int i=0;i<n;i++) {
             totalsum+=A[i];
-            A[i]=-A[i];
+            A[i]=-A[i];                                               //inverting element
         }
         int maxcircular=totalsum+normalmaxsum(A,n);                  //pass inversion vector 
     
