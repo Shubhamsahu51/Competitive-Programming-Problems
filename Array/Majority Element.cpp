@@ -44,7 +44,21 @@ public:
     }
 };
 
-II) OPtimise-O(N)
+II) better-
+ int majorityElement(int a[], int size)
+{
+    unordered_map<int,int>mp;
+    for (int i=0;i<size;i++) {
+        mp[a[i]]++;
+    }
+    for (auto x:mp) {
+        if (x.second > size/2)
+        return x.first;
+    }
+    return -1;
+}
+
+III) OPtimise-O(N)
 
 class Solution {
 public:
