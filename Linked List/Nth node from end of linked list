@@ -6,8 +6,8 @@ int getNthFromLast(struct Node *head, int n)
     struct Node* first = head;
     struct Node* second = head;
         for (int i=0 ; i<n ;i++) {
-            if (first==NULL)
-               return NULL;
+            if (first==NULL)                    //imp step
+               return -1;
             first=first->next;
         }
         while (first!=NULL) {
