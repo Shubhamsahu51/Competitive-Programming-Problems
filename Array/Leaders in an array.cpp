@@ -96,7 +96,7 @@ vector<int> leaders(int a[], int n){
         v.reserve(10000000);
         v.push_back(curr_leader);
         for (int i=n-2;i>=0;i--) {
-            if (a[i]>=curr_leader){
+            if (a[i]>=curr_leader){                             //will work for adjacent equal elements also
                 curr_leader=a[i];
                 v.push_back(curr_leader);
             }
