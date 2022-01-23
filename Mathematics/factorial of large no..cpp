@@ -1,3 +1,5 @@
+
+https://www.geeksforgeeks.org/factorial-large-number/
 int multiply(int x,vector<int>&ans,int res_size) {
         int carry = 0;
         for (int i=0;i<res_size;i++) {
