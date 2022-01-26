@@ -9,3 +9,6 @@ void primeFactor(int &n) {
     if(n>1)               //cornercase
         cout<<n;
 }
+
+---------------------------optimise----------------
+    
