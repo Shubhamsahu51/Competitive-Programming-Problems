@@ -1,3 +1,8 @@
+Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+**********************************************************************************************************
+
 string reverseWords(string S) 
     { 
       string ans="";
