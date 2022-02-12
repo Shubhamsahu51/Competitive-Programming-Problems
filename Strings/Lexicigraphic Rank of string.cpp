@@ -29,7 +29,7 @@ ii)T(n)=O(n)
         int count[256]={0};
         for (int i=0;i<n;i++) {
             if (count[S[i]]==0) count[S[i]]++;
-            else return 0;                       //corner case
+            else return 0;                       //corner case if any charecter repeat in string
         }
         for (int i=1;i<256;i++) {
             count[i]+=count[i-1];
