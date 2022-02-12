@@ -5,14 +5,12 @@ int main()
     sort(s.begin(),s.end());
     int count=1;
     while (1) {
-         next_permutation(s.begin(),s.end());
-          count++;
          if (str.compare(s)==0) {
             cout<<count; 
             break;
          }
-
-        
+         next_permutation(s.begin(),s.end());
+         count++;
     }
     
     return 0;
